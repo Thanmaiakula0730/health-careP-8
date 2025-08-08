@@ -1,77 +1,62 @@
-Perfect ✅
-Here’s your **updated README.md** with an **example code snippet** showing how to load `medical_cnn_model.h5` and make predictions using new patient data.
+🏥 HealthCare Project – CNN Model for Medical Test Prediction
 
----
-
-# 🏥 HealthCare Project – CNN Model for Medical Test Prediction
-
-## 📌 Overview
+📌 Overview
 
 This project builds a **Convolutional Neural Network (CNN)** model to predict **medical test results** based on patient information such as **Name, Age, Gender, Blood Type, Medical Condition, and Medication**.
 
 The dataset is preprocessed, encoded, and standardized before being fed into the model. The trained model is saved as `medical_cnn_model.h5` for future predictions.
 
----
+📂 Project Structure
 
-## 📂 Project Structure
-
-```
 📁 HealthCare-Project-8
 │── healthcare_dataset.csv        # Dataset containing patient information
 │── train.py                      # Python script to train the CNN model
 │── medical_cnn_model.h5          # Saved trained CNN model
 │── README.md                     # Project documentation
-```
 
----
 
-## 🛠️ Requirements
+ 🛠️ Requirements
 
 Make sure you have Python installed along with the following dependencies:
 
-```bash
+bash
 pip install pandas numpy scikit-learn tensorflow
-```
 
----
-
-## 📊 Dataset
+📊 Dataset
 
 The dataset (`healthcare_dataset.csv`) contains columns:
 
-* **Name** – Patient’s name
-* **Age** – Patient’s age
-* **Gender** – Male/Female
-* **Blood Type** – e.g., A+, O-, etc.
-* **Medical Condition** – Disease/condition of the patient
-* **Medication** – Prescribed medication
-* **Test Results** – Target label (e.g., Positive, Negative)
+* Name – Patient’s name
+* Age – Patient’s age
+* Gender – Male/Female
+* Blood Type – e.g., A+, O-, etc.
+* Medical Condition – Disease/condition of the patient
+* Medication – Prescribed medication
+* Test Results – Target label (e.g., Positive, Negative)
 
----
+🚀 How to Run
 
-## 🚀 How to Run
+1️⃣ Clone the repository
 
-### 1️⃣ Clone the repository
-
-```bash
+bash
 git clone https://github.com/Thanmaiakula0730/health-careP-8.git
 cd health-careP-8
-```
 
-### 2️⃣ Run the training script
 
-```bash
+2️⃣ Run the training script
+
+bash
 python train.py
-```
 
-**Output:**
+
+Output:
 
 * The model will be trained and saved as `medical_cnn_model.h5`.
 * Sample predictions will be displayed in the terminal.
 
----
 
-## 🧠 Model Architecture
+
+🧠 Model Architecture
 
 The CNN model includes:
 
@@ -82,35 +67,30 @@ The CNN model includes:
 * **Dropout layer** (0.3)
 * **Dense output layer** (softmax activation)
 
----
 
-## 📈 Training
 
-* **Optimizer:** Adam
-* **Loss:** Categorical Crossentropy
-* **Metrics:** Accuracy
-* **Epochs:** 50
-* **Batch Size:** 4
-* **Validation Split:** 10%
+ 📈 Training
 
----
+* Optimizer: Adam
+* Loss: Categorical Crossentropy
+* Metrics: Accuracy
+* Epochs: 50
+* Batch Size: 4
+* Validation Split: 10%
 
-## 🏆 Sample Output
 
-```
+
+🏆 Sample Output
+
 Sample predictions:
 Predicted: Positive | True: Positive
 Predicted: Negative | True: Negative
-...
-```
 
----
-
-## 🔮 Example: Load Model & Make Predictions
+🔮 Example: Load Model & Make Predictions
 
 Here’s how you can use the trained model for new patient data:
 
-```python
+python
 import pandas as pd
 import numpy as np
 from tensorflow.keras.models import load_model
@@ -157,11 +137,9 @@ predicted_class = np.argmax(prediction, axis=1)
 target_encoder = LabelEncoder()
 target_encoder.fit(dataset["Test Results"])
 print("Predicted Test Result:", target_encoder.inverse_transform(predicted_class)[0])
-```
+`
 
----
-
-## 📌 Future Improvements
+📌 Future Improvements
 
 * Add a **Streamlit or Flask web interface** for easy predictions.
 * Increase dataset size for better accuracy.
@@ -169,12 +147,8 @@ print("Predicted Test Result:", target_encoder.inverse_transform(predicted_class
 
 ---
 
-## 👩‍💻 Author
+👩‍💻 Author
 
-**Akula Thanmai**
-📧 Contact: *\[Your Email]*
+Akula Thanmai
+📧 Contact: 7601045371, email: thanmaiakula1@gmail.com 
 🔗 GitHub: [Thanmaiakula0730](https://github.com/Thanmaiakula0730)
-
----
-
-If you want, I can also **include the code to automatically save your label encoders and scaler** during training so that the prediction code won’t need to refit them every time. That will make the deployment cleaner and faster.
